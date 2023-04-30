@@ -9,17 +9,18 @@ public class contact extends Adressbook {
 
         Adressbook ab = new Adressbook();
         while (1 < 2) {
-            System.out.println("Enter number \n 1-Add \n 2-Show \n 4-exit");
+            System.out.println("Enter number \n 1-Add \n 2-Update \n 3-Show \n 4-exit");
             int num = sc.nextInt();
             if (num == 1) {
                 ab.Addcontact();
-            }
-             else if (num == 2) {
+            } else if (num == 2) {
+                ab.updatecontact();
+            } else if (num == 2) {
                 ab.show();
             } else {
                 break;
             }
         }
     }
+    }
 
-}

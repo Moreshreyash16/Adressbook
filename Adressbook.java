@@ -49,6 +49,48 @@ public class Adressbook {
         public void show() {
         System.out.println(list);
     }
+        public void updateFirstName(int f, String firstName) {
+        this.firstName = firstName;
+
+        list.set(f, firstName);
+
+    }
+
+    public void updateLastName(int l, String lastName) {
+        this.LastName = lastName;
+
+        list.set(l, lastName);
+
+    }
+
+
+    public void updateAddress(int a, String address) {
+        this.Address = address;
+        list.set(a, address);
+
+    }
+
+    public void updateCity(int c, String city) {
+        this.city = city;
+        list.set(c, city);
+    }
+
+    public void updateState(int s, String state) {
+        this.State = state;
+        list.set(s, state);
+
+    }
+
+    public void updatePincode(int p, int pincode) {
+        this.pincode = pincode;
+
+        list.set(p, pincode);
+    }
+        public void updatePhoneNumber(int ph, int phoneNumber) {
+        this.phoneNumber = phoneNumber;
+        list.set(ph, phoneNumber);
+    }
+
     public void Addcontact() {
 
         while (true) {
@@ -90,6 +132,48 @@ public class Adressbook {
             }
         }
     }
+    public void updatecontact() {
 
+        while (true) {
+            System.out.println("Enter a number to update ::\n 1 - First name \n 2 - LastName \n 3 - City \n 4 - State\n 4 - address \n 4 - pincode \n 7 - phonenumber \n 8- Display \n 9-to return to main menu ");
+            int u = sc.nextInt();
+//        int n = sc.nextInt();
+            if (u == 1) {
+                System.out.println("Enter the firstname");
+                String fn = sc.next();
+                updateFirstName(0,fn);
+            } else if (u == 2) {
+                System.out.println("Enter the Lastname");
+                String ln = sc.next();
+                updateLastName(1,ln);
+            } else if (u == 3) {
+                System.out.println("Enter the City");
+                String city = sc.next();
+                updateCity(2,city);
+            } else if (u == 4) {
+                System.out.println("Enter the State");
+                String state = sc.next();
+                updateState(3,state);
+            } else if (u == 5) {
+                System.out.println("Enter the Address");
+                String adrr = sc.next();
+                updateAddress(4,adrr);
+            } else if (u == 6) {
+                System.out.println("Enter the Phone Number");
+                int phone = sc.nextInt();
+                updatePhoneNumber(5,phone);
+            } else if (u == 7) {
+                System.out.println("Enter the Pincode");
+                int pin = sc.nextInt();
+                updatePincode(6,pin);
+
+            } else if (u == 8) {
+                show();
+
+            } else {
+                break;
+            }
+        }
+    }
     }
 
