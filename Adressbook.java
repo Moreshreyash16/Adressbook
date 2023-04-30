@@ -10,6 +10,7 @@ public class Adressbook {
     public Adressbook() {
 
     }
+
     Scanner sc = new Scanner(System.in);
     ArrayList list = new ArrayList();
 
@@ -42,14 +43,13 @@ public class Adressbook {
         this.pincode = pincode;
         list.add(pincode);
     }
-        public void setPhoneNumber(int phoneNumber) {
+
+    public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
         list.add(phoneNumber);
     }
-        public void show() {
-        System.out.println(list);
-    }
-        public void updateFirstName(int f, String firstName) {
+
+    public void updateFirstName(int f, String firstName) {
         this.firstName = firstName;
 
         list.set(f, firstName);
@@ -86,17 +86,27 @@ public class Adressbook {
 
         list.set(p, pincode);
     }
-        public void updatePhoneNumber(int ph, int phoneNumber) {
+
+    public void updatePhoneNumber(int ph, int phoneNumber) {
         this.phoneNumber = phoneNumber;
         list.set(ph, phoneNumber);
+    }
+
+    public void show() {
+        System.out.println(list);
+    }
+
+    public void delete() {
+        list.clear();
+        System.out.println(list);
     }
 
     public void Addcontact() {
 
         while (true) {
-            System.out.println("Enter a number to Add ::\n 1 - First name \n 2 - LastName \n 3 - City \n 4 - State\n 4 - address \n 4 - pincode \n 7 - phonenumber \n 8- Display \n 9- to return to main menu ");
+            System.out.println("Enter a number to Add ::\n 1 - First name \n 2 - LastName \n 3 - City \n 4 - State\n 4 - address \n 4 - pincode \n 7 - phonenumber \n 8- Display \n 9-To delete everything \n 10 to return to main menu ");
             int n = sc.nextInt();
-
+//        int n = sc.nextInt();
             if (n == 1) {
                 System.out.println("Enter the firstname");
                 String fn = sc.next();
@@ -127,6 +137,8 @@ public class Adressbook {
                 setPincode(pin);
             } else if (n == 8) {
                 show();
+            } else if (n == 9) {
+                delete();
             } else {
                 break;
             }
@@ -134,8 +146,8 @@ public class Adressbook {
     }
     public void updatecontact() {
 
-        while (true) {
-            System.out.println("Enter a number to update ::\n 1 - First name \n 2 - LastName \n 3 - City \n 4 - State\n 4 - address \n 4 - pincode \n 7 - phonenumber \n 8- Display \n 9-to return to main menu ");
+        while (1 < 2) {
+            System.out.println("Enter a number to update ::\n 1 - First name \n 2 - LastName \n 3 - City \n 4 - State\n 4 - address \n 4 - pincode \n 7 - phonenumber \n 8- Display \n 9-To delete everything \n 10 to return to main menu ");
             int u = sc.nextInt();
 //        int n = sc.nextInt();
             if (u == 1) {
@@ -169,11 +181,12 @@ public class Adressbook {
 
             } else if (u == 8) {
                 show();
-
+            } else if (u == 9) {
+                delete();
             } else {
                 break;
             }
         }
     }
-    }
 
+}
